@@ -1,6 +1,6 @@
+const config = require("./config/config");
 const express = require("express")
 const app = express();
-const port = process.env.PORT || 3050;
 
 // include route file(s)
 const acronymRoutes = require("./routes/acronyms");
@@ -14,7 +14,6 @@ app.get("/test", (request, response) => {
 // use the routes
 app.use("/acronyms", acronymRoutes);
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+app.listen(config.data.apiPort, () => {
+    console.log(`Server running on port ${config.data.apiPort}`);
 });
-

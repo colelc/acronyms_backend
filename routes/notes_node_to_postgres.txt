@@ -21,6 +21,15 @@ linda@Linda:~/vsc-workspace/acronyms_backend$
 
 
 
+Learning how to import stuff between files.
+https://www.stanleyulili.com/node/node-modules-import-and-use-functions-from-another-file
 
-Add a new directory, db, and put an index.js into it.
 
+
+
+Install dotenv in order to read the .env file.
+npm install dotenv
+
+nodejs provides module "process" for us.
+
+Refer to postgres.js to see implementation example.

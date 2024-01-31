@@ -2,9 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const pg = require("pg");
-//const client = require("../db/postgres");
-
-//const db = require("../db/postgres")
+const db = require("../db/postgres");
 
 // Define route for get all acronyms
 // http://localhost:3050/acronyms
@@ -21,22 +19,12 @@ router.get("/101", (request, response) => {
 // Define route to test postgres connectivity
 // http://localhost:3050/pg
 router.get("/pg", async (request, response) => {
-    console.log("getRequest");
-    const client = new pg.Client({
-        user: "toolsuser",
-        host: "cruella.fuqua.duke.edu",
-        database: "toolsdb",
-        password: "F$gM10jTuTY",
-        port: 5432
-    })
-
-    console.log("Attempting to connect");
-    client.connect(async (err) => {
+    db.client.connect(async (err) => {
         if (err) {
             console.log("We have an error", err);
         } else {
-            const result = await client.query("SELECT * FROM fuqua_acronyms");
-            console.log("result!", result);
+            const result = await db.client.query("SELECT * FROM fuqua_acronyms");
+            console.log("result!", result.rows[0]);
             response.send(result.rows);
         }
     });
