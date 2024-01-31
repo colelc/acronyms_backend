@@ -2,14 +2,17 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const ENV = (process.env.ENV).toLowerCase().trim();
+console.log("ENV is " + ENV);
+
 const data = {
-    apiPort: process.env.REST_API_PORT,
+    apiPort: ENV === "d" ? process.env.D_REST_API_PORT : process.env.P_REST_API_PORT,
     postgres: {
-        host: process.env.POSTGRES_HOST,
-        database: process.env.POSTGRES_DATABASE,
-        user: process.env.POSTGRES_USER,
-        password: process.env.POSTGRES_PASSWORD,
-        port: process.env.POSTGRES_PORT
+        host: ENV === "d" ? process.env.D_POSTGRES_HOST : process.env.P_POSTGRES_HOST,
+        database: ENV === "d" ? process.env.D_POSTGRES_DATABASE : process.env.P_POSTGRES_DATABASE,
+        user: ENV === "d" ? process.env.D_POSTGRES_USER : process.env.P_POSTGRES_USER,
+        password: ENV === "d" ? process.env.D_POSTGRES_PASSWORD : process.env.P_POSTGRES_PASSWORD,
+        port: ENV === "d" ? process.env.D_POSTGRES_PORT : process.env.P_POSTGRES_PORT
     }
 };
 
