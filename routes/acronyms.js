@@ -17,7 +17,7 @@ router.get("/101", (request, response) => {
 });
 
 // Define route to test postgres connectivity
-// http://localhost:3050/pg
+// http://localhost:3050/acronyms/pg
 router.get("/pg", async (request, response) => {
     db.client.connect(async (err) => {
         if (err) {
