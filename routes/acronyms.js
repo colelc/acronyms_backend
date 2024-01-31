@@ -1,12 +1,8 @@
-// routes/acronyms.js
-//import * as db from "../db/postgres.js"; // the pg module
-//const db = require("../db/postgres");
-//import * as db from "../db/postgres";
 
 const express = require("express");
 const router = express.Router();
 const pg = require("pg");
-const client = require("../db/postgres");
+//const client = require("../db/postgres");
 
 //const db = require("../db/postgres")
 
