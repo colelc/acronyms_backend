@@ -2,13 +2,15 @@
   "name": "acronyms_node_backend",
   "version": "1.0.0",
   "description": "Backend for Fuqua Acronyms project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Linda Cole",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
   }
+
 }
