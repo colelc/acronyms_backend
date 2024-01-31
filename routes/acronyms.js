@@ -9,6 +9,8 @@ const db = require("../db/postgres");
 //     response.send("This is the get all acronyms route");
 // });
 
+
+
 // Define route for get a specific acronym by id
 // http://localhost:3050/acronyms/71
 router.get("/pg/:id", (request, response) => {
@@ -29,6 +31,8 @@ router.get("/pg/:id", (request, response) => {
         }
     });
 });
+
+
 
 // Define route to test postgres connectivity
 // http://localhost:3050/acronyms/pg

@@ -120,10 +120,11 @@ Test browser: http://localhost:3050.  OK good.
 
 
 
+Install this for auto-refresh when in development mode.
 
+linda@Linda:~/vsc-workspace/acronyms_backend$ npm install nodemon --save-dev
 
+added 33 packages in 3s
 
-
-
-
-
+15 packages are looking for funding
+  run `npm fund` for details
